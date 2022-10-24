@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.breakpoints";
+
+.main {
+	min-height: calc(100vh - 50px);
+	margin-top: 50px;
+	padding-inline: 3%;
+	padding-block: 30px;
+
+	@include devices(tablet) {
+	}
+	@include devices(desktop) {
+	}
+}

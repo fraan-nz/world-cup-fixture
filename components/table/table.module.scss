@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.breakpoints";
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+
+	.title {
+		width: 100%;
+		background: $primary-gradient;
+		color: $white;
+		font-size: 1.5rem;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+	}
+
+	.dataTitle {
+		background-color: $darkGray;
+		color: $white;
+		font-size: 0.8rem;
+
+		th {
+			min-width: 20px;
+		}
+	}
+
+	.dataRow {
+		text-align: center;
+		font-size: 0.8rem;
+
+		&:nth-child(2n) {
+			background-color: $lightGray;
+		}
+	}
+
+	@include devices(tablet) {
+		.title {
+			font-size: 2rem;
+		}
+		.dataTitle {
+			font-size: 1rem;
+		}
+		.dataRow {
+			font-size: 1rem;
+		}
+	}
+	@include devices(desktop) {
+		.title {
+			font-size: 2.5rem;
+		}
+		.dataTitle {
+			font-size: 1.2rem;
+		}
+		.dataRow {
+			font-size: 1.2rem;
+		}
+	}
+}

@@ -1,0 +1,106 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.breakpoints";
+
+.navbar {
+	background-color: $darkGray;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-inline: 3%;
+
+	.navLinks {
+		width: 200px;
+		height: 100vh;
+		background: $primary-gradient;
+		list-style: none;
+		position: absolute;
+		top: 50px;
+		right: -200px;
+		padding-left: 2em;
+		padding-block: 2em;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		color: $white;
+		transition: right 0.5s ease-in-out;
+		font-weight: 600;
+
+		.navLink {
+			font-size: 1.5rem;
+			font-family: "Qatar";
+		}
+	}
+
+	.open {
+		right: 0px;
+	}
+
+	.navLogin {
+		line-height: 0;
+		font-size: 1.5rem;
+		color: $white;
+		margin-right: 15px;
+	}
+
+	.navBars {
+		line-height: 0;
+		background: none;
+		border: none;
+		font-size: 2rem;
+		color: $white;
+		cursor: pointer;
+	}
+
+	@include devices(tablet) {
+	}
+	@include devices(desktop) {
+		.navLinks {
+			position: relative;
+			top: auto;
+			left: auto;
+			right: auto;
+			flex-direction: row;
+			align-items: center;
+			height: 50px;
+			padding: 0;
+			width: 100%;
+			gap: 0;
+			overflow: hidden;
+			transition: none;
+			background: transparent;
+
+			.navLink {
+				font-size: 1rem;
+				padding-inline: 15px;
+				padding-top: 10px;
+				padding-bottom: 14px;
+				border-top-left-radius: 15px;
+				border-top-right-radius: 15px;
+				border-bottom: 1px solid $darkGray;
+				background: $primary-gradient;
+
+				&:hover:not(.active) {
+					filter: brightness(1.2);
+				}
+			}
+			.active {
+				background: $white;
+				color: $black;
+				border-bottom: 1px solid $white;
+			}
+		}
+		.navLogin {
+			margin-right: 0px;
+		}
+		.navBars {
+			display: none;
+			pointer-events: none;
+		}
+	}
+}

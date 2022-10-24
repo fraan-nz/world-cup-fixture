@@ -1,0 +1,92 @@
+@import "../../styles/variables";
+@import "../../styles/mixins.breakpoints";
+
+.match {
+	width: 100%;
+	display: grid;
+	grid-template-areas:
+		"date date date date date date date"
+		"homeImg home homeScore vs awayScore away awayImg";
+	grid-template-rows: auto auto;
+	grid-template-columns: 20px 1fr 22px 22px 22px 1fr 20px;
+	text-align: center;
+	font-size: 1rem;
+	border-bottom: 1px solid $black;
+
+	.date {
+		grid-area: date;
+		background: $primary-gradient;
+		color: $white;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+	}
+	.home {
+		grid-area: home;
+		background-color: $white;
+		line-height: 1.4;
+	}
+	.homeScore {
+		grid-area: homeScore;
+		background-color: $lightGray;
+	}
+	.away {
+		grid-area: away;
+		background-color: $white;
+	}
+	.awayScore {
+		grid-area: awayScore;
+		background-color: $lightGray;
+	}
+	.vs {
+		grid-area: vs;
+		background-color: $darkGray;
+		color: $white;
+	}
+	.homeImg {
+		width: 20px;
+		height: 20px;
+		grid-area: homeImg;
+		place-self: center;
+		clip-path: circle(40%);
+		z-index: -1;
+	}
+	.awayImg {
+		width: 20px;
+		height: 20px;
+		grid-area: awayImg;
+		place-self: center;
+		clip-path: circle(40%);
+		z-index: -1;
+	}
+
+	@include devices(tablet) {
+	}
+	@include devices(desktop) {
+		width: 45%;
+		grid-template-columns: 30px 1fr 30px 40px 30px 1fr 30px;
+		text-align: center;
+		font-size: 1rem;
+		border-bottom: 1px solid $black;
+
+		.date,
+		.home,
+		.homeScore,
+		.away,
+		.awayScore,
+		.vs {
+			font-size: 1.2rem;
+			width: 100%;
+			height: 100%;
+			place-self: center;
+			line-height: 1.5;
+		}
+		.homeImg {
+			width: 30px;
+			height: 30px;
+		}
+		.awayImg {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
