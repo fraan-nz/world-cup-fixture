@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { groupsAdapter } from "../adapters/groupsAdapter";
 import Match from "../components/match/Match";
 import { groups } from "../utils/groups";
@@ -45,6 +45,7 @@ export async function getStaticProps(props) {
 			},
 		}
 	);
+
 	const promisePositions = await fetch(
 		`https://api.football-data.org/v4/competitions/2000/standings`,
 		{
@@ -53,6 +54,13 @@ export async function getStaticProps(props) {
 			},
 		}
 	);
+
+	if (promisePositions.status !== 200 || promiseMatchs.status !== 200) {
+		return {
+			notFound: true,
+		};
+	}
+
 	const matches = await promiseMatchs.json();
 	const positions = await promisePositions.json();
 
