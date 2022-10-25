@@ -41,7 +41,7 @@ function Navbar() {
 				})}
 			</ul>
 			<Link href="/login">
-				<a className={styles.navLogin} title="Login">
+				<a className={styles.navLogin}>
 					<FaUserAlt />
 				</a>
 			</Link>

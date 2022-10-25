@@ -4,11 +4,11 @@
 .main {
 	min-height: calc(100vh - 50px);
 	margin-top: 35px;
-	padding-inline: 3%;
 	padding-block: 30px;
+	padding-inline: 3%;
 
 	@include devices(tablet) {
-		margin-top: 80px;
+		padding-top: 80px;
 	}
 	@include devices(desktop) {
 	}
