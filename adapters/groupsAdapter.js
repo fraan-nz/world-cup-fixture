@@ -1,5 +1,5 @@
 export const groupsAdapter = (api) => {
-	return api.matches.map((match) => {
+	return api.map((match) => {
 		return {
 			id: match.id,
 			date: match.utcDate,

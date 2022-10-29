@@ -33,7 +33,7 @@ function Navbar() {
 											: styles.navLink
 									}
 								>
-									Grupo {g}
+									Grupo {g.toUpperCase()}
 								</a>
 							</Link>
 						</li>

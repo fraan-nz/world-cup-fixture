@@ -22,13 +22,14 @@ function Form() {
 			initialValues={{
 				email: "",
 				password: "",
+				name: "",
 			}}
 			onSubmit={(values) => {
 				if (pathname === "/register") {
 					createUserWithEmailAndPassword(auth, values.email, values.password)
 						.then((userAuth) => {
 							updateProfile(userAuth.user, {
-								displayName: "panda",
+								displayName: values.name,
 							}).catch((error) => {
 								console.log(error);
 							});
@@ -70,6 +71,19 @@ function Form() {
 					{pathname === "/register" && (
 						<h1 className={styles.title}>Registrate</h1>
 					)}
+					<label>
+						<span>Nombre</span>
+						<input
+							type="text"
+							name="name"
+							value={values.name}
+							onChange={handleChange}
+							onBlur={handleBlur}
+						/>
+						{errors.name && touched.name ? (
+							<span className={styles.error}>{errors.email}</span>
+						) : null}
+					</label>
 					<label>
 						<span>E-mail</span>
 						<input

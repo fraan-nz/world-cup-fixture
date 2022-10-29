@@ -1,10 +1,10 @@
 export const groups = {
-	group_A: "A",
-	group_B: "B",
-	group_C: "C",
-	group_D: "D",
-	group_E: "E",
-	group_F: "F",
-	group_G: "G",
-	group_H: "H",
+	group_a: "a",
+	group_b: "b",
+	group_c: "c",
+	group_d: "d",
+	group_e: "e",
+	group_f: "f",
+	group_g: "g",
+	group_h: "h",
 };
